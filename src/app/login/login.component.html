@@ -1,0 +1,21 @@
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+</head>
+<body>
+<div class="container" *ngIf="!isLogin">
+  <div class="form-group">
+    <label for="NameDemo">Your ID:</label>
+    <input type="text" class="form-control" id="Name" aria-describedby="nameHelp" placeholder="Enter ID" [(ngModel)]="user.uiId">
+    <small id="nameHelp" class="form-text text-muted">Please enter your full name</small>
+  </div>
+  <div class="form-group">
+    <label for="passDemo">Enter Password:</label>
+    <input type="password" class="form-control" id="pass" aria-describedby="passHelp" placeholder="Password" [(ngModel)]="user.uiPwd">
+    <small id="passHelp" class="form-text text-muted">Must be 8 characters long</small>
+  </div>
+  <button class="btn btn-success" (click)="login()">Login</button>
+</div>
+<div *ngIf="isLogin">
+<button class="btn btn-success" (click)="logout()">Logout</button>
+</div>
+</body>
